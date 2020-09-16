@@ -1,0 +1,6 @@
+{
+    "name": "openBD Checker",
+    "version": "0.1.0",
+    "description": "openBDに登録されている書誌・書影情報をISBNで検索・参照する。",
+    "manifest_version": 2
+}
