@@ -1,11 +1,12 @@
 {
     "name": "openBD Checker",
     "version": "0.1.0",
-    "description": "openBDに登録されている書誌・書影情報をISBNで検索・参照する。",
+    "description": "openBDに登録されている書誌・書影情報を、コンテクストメニューからISBNで検索・参照する。",
     "permissions": [
-        "activeTab",
-        "storage",
-        "declarativeContent"
+        "contextMenus",
+        "tabs",
+        "http://*/*",
+        "https://*/*"
     ],
     "background": {
         "scripts": [
@@ -13,7 +14,6 @@
         ],
         "persistent": false
     },
-    "options_page": "options.html",
     "page_action": {
         "default_popup": "popup.html",
         "default_icon": {
