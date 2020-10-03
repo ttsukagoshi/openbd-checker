@@ -1,0 +1,1 @@
+let pageOpenBd = document.getElementById('openBDcontent');

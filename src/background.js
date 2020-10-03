@@ -7,8 +7,7 @@ chrome.runtime.onInstalled.addListener(function () {
         "title": "openBDを検索する（ISBN）",
         "type": "normal",
         "contexts": [
-            "selection",
-            "editable"
+            "selection"
         ]
     });
 });
@@ -20,14 +19,25 @@ chrome.contextMenus.onClicked.addListener(function (info) {
 });
 
 function openBDCheckerAlert(info) {
-    if (!info.selectionText) {
-        alert('ISBNコードが選択されていません。');
+    console.log(info);
+    try {
+        if (!info.selectionText) {
+            throw new Error('ISBNが選択されていません。');
+        }
+        let isbnText = info.selectionText.replace(/\-/g, '');
+        /*
+        verify isbnText
+        */
+        let url = `https://api.openbd.jp/${OPENBD_API_VERSION}/get?isbn=${encodeURIComponent(isbnText)}`;
+        chrome.storage.local.set({'openBdUrl': url}, function() {
+            console.log(`openBD URL set to ${url}`);
+        });
+        chrome.tabs.create({
+            'url': chrome.runtime.getURL('result.html'),
+            'active': true
+        });
+    } catch (error) {
+        let message = `${error.message}\n\n▼詳細\n${error.stack}`;
+        alert(message);
     }
-    var isbnText = info.selectionText.replace(/\-/g, '');
-    var baseUrl = `https://api.openbd.jp/${OPENBD_API_VERSION}/get`;
-    var url = baseUrl + `?isbn=${encodeURIComponent(isbnText)}`;
-    chrome.tabs.create({
-        'url': url,
-        'active': true
-    });
 }
