@@ -5,8 +5,9 @@
 hogehoge
 
 ## 使用
-fugafuga
+ISBNを選択し、右クリック→「openBDを検索する（ISBN）」を選択すると、新しいタブで当該書籍のopenBD上での情報が表示される。
+
 - ハイフン（-）が入ったISBN文字列でも検索可能。
 
-## 参考
-- [図書館員のための個人プロジェクトによる学術情報システムスキルアップ](https://www.jstage.jst.go.jp/article/jkg/69/4/69_150/_pdf/-char/ja)
+## クレジット
+Icon made by [Freepik](https://www.flaticon.com/authors/freepik) from [www.flaticon.com](https://www.flaticon.com/)
