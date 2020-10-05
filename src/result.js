@@ -15,7 +15,7 @@ window.addEventListener('load', function () {
  */
 function returnBookInfo(openBdUrl, openBdResponse) {
     try {
-        var bookInfo = openBdResponse.map(element => {
+        let bookInfo = openBdResponse.map(element => {
             element = element || { 'summary': {} };
             let bookSummary = {
                 'isbn': element.summary.isbn || 'NA',
