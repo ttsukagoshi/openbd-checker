@@ -1,8 +1,8 @@
 window.addEventListener('load', function () {
     // openBD APIから取得した取得したデータをchrome.storageから読み込む
     chrome.storage.local.get(['openBdUrl', 'openBdResponse'], function (result) {
-        let url = result.openBdUrl;
-        let response = JSON.parse(result.openBdResponse);
+        let url = result.openBdUrl || null;
+        let response = JSON.parse(result.openBdResponse || '[null]');
         // result.htmlへの反映処理
         returnBookInfo(url, response);
     });
@@ -55,7 +55,7 @@ function returnBookInfo(openBdUrl, openBdResponse) {
         // openBDでの登録内容
         document.getElementById('openBdContent').textContent = JSON.stringify(openBdResponse);
         // openBDのURL
-        document.getElementById('openBdUrl').innerHTML = `<a href="${openBdUrl}">${openBdUrl}</a>`;
+        document.getElementById('openBdUrl').innerHTML = (openBdUrl ? `<a href="${openBdUrl}">${openBdUrl}</a>` : '<p>NA</p>');
         // 後処理（chrome.storage内の情報を削除）
         chrome.storage.local.remove(['openBdUrl', 'openBdResponse'], function () {
             console.log('Reset: openBdUrl and openBdResponse');
