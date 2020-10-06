@@ -2,9 +2,9 @@
 ウェブブラウザ（Chrome）内で選択したISBNコードに基づいて、コンテクストメニュー（右クリックメニュー）から[openBD](https://openbd.jp/)に登録されている情報を参照できるようにする拡張機能。
 
 ## インストール
-`Chromeウェブストアにて審査中`
+[Chromeウェブストア「openBD情報チェッカー」](https://chrome.google.com/webstore/detail/openbd%E6%83%85%E5%A0%B1%E3%83%81%E3%82%A7%E3%83%83%E3%82%AB%E3%83%BC/jmbcpombnleepfponcjibgeohkfcocgg?hl=ja)からインストール（Chromeユーザ限定）
 
-## 使用
+## 使用（設定不要。インストール後、すぐに利用できます）
 ブラウザ上でISBNを選択し、右クリック→「openBDを検索する（ISBN）」を選択すると、新しいタブで当該書籍のopenBD上での情報が表示される。
 - ハイフン（-）が入ったISBN文字列でも検索可能。
 - 旧ISBNでも検索可能（openBD APIの仕様）
