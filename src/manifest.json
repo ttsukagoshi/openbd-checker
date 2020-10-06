@@ -1,6 +1,24 @@
 {
-    "name": "openBD Checker",
-    "version": "0.1.0",
-    "description": "openBDに登録されている書誌・書影情報をISBNで検索・参照する。",
+    "name": "openBD情報チェッカー",
+    "version": "1.0.0",
+    "description": "openBDに登録されている書誌・書影情報を、コンテクストメニューからISBNで検索・参照する。",
+    "permissions": [
+        "contextMenus",
+        "tabs",
+        "storage",
+        "https://api.openbd.jp/"
+    ],
+    "background": {
+        "scripts": [
+            "background.js"
+        ],
+        "persistent": false
+    },
+    "icons": {
+        "16": "images/books16.png",
+        "32": "images/books32.png",
+        "48": "images/books48.png",
+        "128": "images/books128.png"
+    },
     "manifest_version": 2
 }
