@@ -24,9 +24,10 @@ function openBDChecker(info) {
             throw new Error('ISBNが選択されていません。');
         }
         let isbnText = info.selectionText.replace(/\-|\,/g, '');
-        /*
-        verify isbnText
-        */
+        let verifyIsbn = isbnText.match(/^(\d{10}|\d{13})$/);
+        if (!verifyIsbn) {
+            throw new Error('選択した文字列はISBNではないようです。選択範囲をご確認ください。');
+        }
         let url = `https://api.openbd.jp/${OPENBD_API_VERSION}/get?isbn=${encodeURIComponent(isbnText)}`;
         chrome.storage.local.set({ 'openBdUrl': url }, function () {
             console.log(`openBdUrl set to ${url}`);
