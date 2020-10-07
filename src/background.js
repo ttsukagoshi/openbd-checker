@@ -4,7 +4,7 @@ const OPENBD_API_VERSION = 'v1'; // openBDのAPIバージョン。 https://openb
 chrome.runtime.onInstalled.addListener(function () {
     chrome.contextMenus.create({
         "id": "openBDChecker",
-        "title": "openBDを検索する（ISBN）",
+        "title": "ISBN「%s」でopenBDを検索",
         "type": "normal",
         "contexts": [
             "selection"
