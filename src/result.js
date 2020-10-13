@@ -56,10 +56,6 @@ function returnBookInfo(openBdUrl, openBdResponse) {
         document.getElementById('openBdContent').textContent = JSON.stringify(openBdResponse);
         // openBDのURL
         document.getElementById('openBdUrl').innerHTML = (openBdUrl ? `<a href="${openBdUrl}">${openBdUrl}</a>` : '<p>NA</p>');
-        // 後処理（chrome.storage内の情報を削除）
-        chrome.storage.local.remove(['openBdUrl', 'openBdResponse'], function () {
-            console.log('Reset: openBdUrl and openBdResponse');
-        })
     } catch (error) {
         let errorMessage = document.createElement('errorMessage');
         errorMessage.textContent = `${error.message} - ${error.stack}`;

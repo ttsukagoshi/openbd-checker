@@ -28,6 +28,10 @@ function openBDChecker(info) {
         if (!verifyIsbn) {
             throw new Error('選択した文字列はISBNではないようです。選択範囲をご確認ください。');
         }
+        // 前処理（chrome.storage.local内に残っている情報を削除）
+        chrome.storage.local.remove(['openBdUrl', 'openBdResponse'], function () {
+            console.log('Reset: openBdUrl and openBdResponse');
+        });
         let url = `https://api.openbd.jp/${OPENBD_API_VERSION}/get?isbn=${encodeURIComponent(isbnText)}`;
         chrome.storage.local.set({ 'openBdUrl': url }, function () {
             console.log(`openBdUrl set to ${url}`);
@@ -39,7 +43,7 @@ function openBDChecker(info) {
             if (xhr.readyState === XMLHttpRequest.DONE) {
                 let status = xhr.status;
                 if (status >= 200 && status < 400) {
-                    chrome.storage.local.set({ 'openBdResponse': xhr.responseText }, function() {
+                    chrome.storage.local.set({ 'openBdResponse': xhr.responseText }, function () {
                         console.log(`openBdResponse set to ${xhr.responseText}`);
                     });
                 } else {
