@@ -37,7 +37,7 @@ function returnBookInfo(openBdUrl, openBdResponse) {
         } else if (bookInfo.length > 1) {
             throw new Error('2つ以上の書籍情報が取得されました。選択したISBNを確認してください。');
         }
-        bookInfoObj = bookInfo[0];
+        let bookInfoObj = bookInfo[0];
         // 書影
         document.getElementById('bookCover').innerHTML = bookInfoObj.coverUrlImg;
         // 書籍の概要
