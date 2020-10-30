@@ -1,4 +1,5 @@
-# openBD情報チェッカー（Google Chrome拡張機能） [![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/ttsukagoshi/chrome-ext_openBD-checker.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/ttsukagoshi/chrome-ext_openBD-checker/context:javascript)
+# openBD情報チェッカー（Google Chrome拡張機能）
+![Chrome Web Store](https://img.shields.io/chrome-web-store/v/jmbcpombnleepfponcjibgeohkfcocgg) [![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/ttsukagoshi/chrome-ext_openBD-checker.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/ttsukagoshi/chrome-ext_openBD-checker/context:javascript)  
 ウェブブラウザ（Chrome）内で選択したISBNコードに基づいて、コンテクストメニュー（右クリックメニュー）から[openBD](https://openbd.jp/)に登録されている情報を参照できるようにする拡張機能。
 
 ## インストール
