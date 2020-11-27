@@ -13,7 +13,6 @@
 // limitations under the License.
 
 // Global variable(s)
-
 const OPENBD_API_VERSION = 'v1'; // openBDのAPIバージョン。 https://openbd.jp/
 
 chrome.runtime.onInstalled.addListener(function () {
