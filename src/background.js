@@ -12,6 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+/* global chrome */
+
 // Global variable(s)
 const OPENBD_API_VERSION = 'v1'; // openBDのAPIバージョン。 https://openbd.jp/
 
