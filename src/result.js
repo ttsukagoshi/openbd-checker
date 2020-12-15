@@ -12,6 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+/* global chrome */
+
 window.addEventListener('load', function () {
     // openBD APIから取得した取得したデータをchrome.storageから読み込む
     chrome.storage.local.get(['openBdUrl', 'openBdResponse'], function (result) {
