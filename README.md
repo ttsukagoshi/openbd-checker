@@ -6,7 +6,7 @@
 openBD is a project based in Japan to make cover images and book data openly available to anyone who loves books. This extension uses its API to refer to the data. Please note that the API, and consequently this extension, is available only in the Japanese language.
 </blockquote>
 
-![右クリックメニューで表示されたこの拡張機能のスクリーンショット](https://ttsukagoshi.github.io/scriptable-assets/assets/images/openBD-checker/screenshot_openBD_1.jpg) 
+![右クリックメニューで表示されたこの拡張機能のスクリーンショット](https://ttsukagoshi.github.io/scriptable-assets/assets/images/openBD-checker/screenshot_openBD_1.jpg)
 
 ## インストール
 [Chromeウェブストア「openBD情報チェッカー」](https://chrome.google.com/webstore/detail/openbd%E6%83%85%E5%A0%B1%E3%83%81%E3%82%A7%E3%83%83%E3%82%AB%E3%83%BC/jmbcpombnleepfponcjibgeohkfcocgg?hl=ja)からインストール（Chromeユーザ限定）
