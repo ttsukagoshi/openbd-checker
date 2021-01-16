@@ -16,7 +16,7 @@ openBD is a project based in Japan to make cover images and book data openly ava
 - ハイフン（-）が入ったISBN文字列でも検索可能。
 - 旧ISBN（ISBN-10）でも検索可能（openBD APIの仕様）
 
-![openBDの情報が表示された新しいタブのスクリーンショット例](https://ttsukagoshi.github.io/scriptable-assets/assets/images/openBD-checker/screenshot_openBD_2.jpg) 
+![openBDの情報が表示された新しいタブのスクリーンショット例](https://ttsukagoshi.github.io/scriptable-assets/assets/images/openBD-checker/screenshot_openBD_2.jpg)
 
 ## 利用規約
 この拡張機能を利用するためには、[利用規約](https://ttsukagoshi.github.io/scriptable-assets/terms-and-conditions/) 及び[openBD API利用規約](https://openbd.jp/terms/)に同意する必要があります。
