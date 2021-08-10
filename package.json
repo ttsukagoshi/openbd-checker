@@ -1,0 +1,34 @@
+{
+  "name": "openbd-checker",
+  "version": "1.0.0",
+  "description": "ウェブブラウザ内で選択したISBNに基づいて、コンテクストメニュー（右クリックメニュー）からopenBDに登録されている情報を参照できるようにするGoogle Chrome拡張機能。",
+  "main": "background.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ttsukagoshi/openbd-checker.git"
+  },
+  "keywords": [
+    "javascript",
+    "chrome-extension",
+    "html",
+    "isbn",
+    "openbd"
+  ],
+  "author": "ttsukagoshi",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/ttsukagoshi/openbd-checker/issues"
+  },
+  "homepage": "https://github.com/ttsukagoshi/openbd-checker#readme",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.29.1",
+    "@typescript-eslint/parser": "^4.29.1",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "prettier": "^2.3.2"
+  }
+}
