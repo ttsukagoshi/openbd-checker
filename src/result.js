@@ -61,9 +61,9 @@ function returnBookInfo(openBdUrl, openBdResponse) {
     }
     let bookInfoObj = bookInfo[0];
     // 書影
-    document.getElementById('bookCover').innerHTML = bookInfoObj.coverUrlImg;
+    document.getElementById('book-cover').innerHTML = bookInfoObj.coverUrlImg;
     // 書籍の概要
-    document.getElementById('bookSummary').innerHTML = `<ul>
+    document.getElementById('book-summary').innerHTML = `<ul>
             <li><strong>ISBN: </strong>${bookInfoObj.isbn}</li>
             <li><strong>書籍名: </strong>${bookInfoObj.title}</li>
             <li><strong>Volume: </strong>${bookInfoObj.volume}</li>
@@ -74,10 +74,10 @@ function returnBookInfo(openBdUrl, openBdResponse) {
             <li><strong>書影URL: </strong>${bookInfoObj.coverUrlAhref}</li>
             </ul>`;
     // openBDでの登録内容
-    document.getElementById('openBdContent').textContent =
+    document.getElementById('openbd-content').textContent =
       JSON.stringify(openBdResponse);
     // openBDのURL
-    document.getElementById('openBdUrl').innerHTML = openBdUrl
+    document.getElementById('openbd-url').innerHTML = openBdUrl
       ? `<a href="${openBdUrl}">${openBdUrl}</a>`
       : '<p>NA</p>';
   } catch (error) {
