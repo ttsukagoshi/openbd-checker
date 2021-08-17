@@ -1,11 +1,11 @@
 {
   "name": "openBD情報チェッカー",
-  "version": "1.2.5",
+  "version": "2.0.0",
   "description": "openBDに登録されている書誌・書影情報を、コンテクストメニューからISBNで検索・参照する。",
-  "permissions": ["contextMenus", "storage", "https://api.openbd.jp/"],
+  "permissions": ["contextMenus", "storage"],
+  "host_permissions": ["https://api.openbd.jp/"],
   "background": {
-    "scripts": ["background.js"],
-    "persistent": false
+    "service_worker": "background.js"
   },
   "icons": {
     "16": "images/books16.png",
@@ -13,5 +13,5 @@
     "48": "images/books48.png",
     "128": "images/books128.png"
   },
-  "manifest_version": 2
+  "manifest_version": 3
 }

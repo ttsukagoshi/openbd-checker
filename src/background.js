@@ -12,10 +12,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-/* global chrome */
+// See latest info for this Chrome extension on its GitHub repository: https://github.com/ttsukagoshi/openbd-checker
 
-// Global variable(s)
-const OPENBD_API_VERSION = 'v1'; // openBDのAPIバージョン。 https://openbd.jp/
+/* global chrome */
 
 chrome.runtime.onInstalled.addListener(function () {
   chrome.contextMenus.create({
@@ -37,49 +36,23 @@ function openBDChecker(info) {
     if (!info.selectionText) {
       throw new Error('ISBNが選択されていません。');
     }
-    let isbnText = info.selectionText.replace(/-|,/g, '');
-    let verifyIsbn = isbnText.match(/^(\d{10}|\d{13})$/);
-    if (!verifyIsbn) {
-      throw new Error(
-        '選択した文字列はISBNではないようです。選択範囲をご確認ください。'
-      );
-    }
     // 前処理（chrome.storage.local内に残っている情報を削除）
-    chrome.storage.local.remove(['openBdUrl', 'openBdResponse'], function () {
-      console.log('Reset: openBdUrl and openBdResponse');
-    });
-    let url = `https://api.openbd.jp/${OPENBD_API_VERSION}/get?isbn=${encodeURIComponent(
-      isbnText
-    )}`;
-    chrome.storage.local.set({ openBdUrl: url }, function () {
-      console.log(`openBdUrl set to ${url}`);
-    });
-    // openBD APIからGETする。
-    let xhr = new XMLHttpRequest();
-    xhr.open('GET', url);
-    xhr.onreadystatechange = function () {
-      if (xhr.readyState === XMLHttpRequest.DONE) {
-        let status = xhr.status;
-        if (status >= 200 && status < 400) {
-          chrome.storage.local.set(
-            { openBdResponse: xhr.responseText },
-            function () {
-              console.log(`openBdResponse set to ${xhr.responseText}`);
-            }
-          );
-        } else {
-          throw new Error('Open BD APIからのGETエラー');
-        }
+    chrome.storage.local.remove(
+      ['selectedText', 'openBdResponse'],
+      function () {
+        console.info('[openBD Checker] Reset storage values');
       }
-    };
-    xhr.send();
+    );
+    // 選択された文字列をいったんstorageに保存
+    chrome.storage.local.set({ selectedText: info.selectionText }, function () {
+      console.info(`[openBD Checker] Selected text: ${info.selectionText}`);
+    });
     // responseの内容を表示するための result.html を別タブで表示する
     chrome.tabs.create({
       url: chrome.runtime.getURL('result.html'),
       active: true,
     });
   } catch (error) {
-    let message = `${error.message}\n\n▼詳細\n${error.stack}`;
-    alert(message);
+    console.error(error);
   }
 }
