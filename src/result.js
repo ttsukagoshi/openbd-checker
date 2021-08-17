@@ -35,7 +35,7 @@ function returnBookInfo(selectedText) {
     // 選択したテキストの整形
     const isbnText = selectedText.replace(/-|,/g, '');
     // ISBN文字列の検証
-    const verifyIsbn = isbnText.match(/^(\d{10}|\d{13})$/);
+    const verifyIsbn = isbnText.match(/^(\d{10}|\d{9}X|\d{13})$/);
     if (!verifyIsbn) {
       throw new Error(
         '選択した文字列はISBNではないようです。選択範囲をご確認ください。'
