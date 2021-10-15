@@ -1,6 +1,6 @@
 {
   "name": "openBD情報チェッカー",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "openBDに登録されている書誌・書影情報を、コンテクストメニューからISBNで検索・参照する。",
   "permissions": ["contextMenus", "storage"],
   "host_permissions": ["https://api.openbd.jp/"],
